@@ -7,7 +7,7 @@ import numpy as np
 BLOCK = 8                                   # process images in 8x8 pixel tiles
 
 # frequency cutoffs
-DCT_LAYER_RADII = (2, 4, 8)                 # DCT layer radii for low, mid, high frequency layers
+DCT_LAYER_RADII = (1, 2, 3)                 # DCT layer radii for low, mid, high frequency layers
 N_LAYERS = len(DCT_LAYER_RADII) + 1         # number of DCT layers
 
 # AEAD params
