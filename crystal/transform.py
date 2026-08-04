@@ -12,6 +12,7 @@ https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.dct.html
 
 """
 import numpy as np
+
 from scipy.fft import dct, idct
 from . import config
 
