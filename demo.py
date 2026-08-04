@@ -8,7 +8,7 @@ then progressively decrypts, capturing visual output for each step.
 Usage: 
     python demo.py path/to/image.jpg                        # no flag -> defaults to AES-GCM
     python demo.py -aes-gcm path/to/image.jpg
-    python demo.py -chacha20 path/to/image.jpg
+    python demo.py -chacha20-poly1305 path/to/image.jpg
     python demo.py -aes-gcm-siv path/to/image.jpg out_dir   # specify output directory
     python demo.py --help
 """
@@ -24,7 +24,7 @@ def parse_args():
     """
     CLI builder. 
 
-    Cipher choice (optional): [-aes-gcm | -chacha20 | -aes-gcm-siv]; defaults to aes-gcm
+    Cipher choice (optional): [-aes-gcm | -chacha20-poly1305 | -aes-gcm-siv]; defaults to aes-gcm
     """
     parser = argparse.ArgumentParser(
         prog = "demo.py",
@@ -40,7 +40,7 @@ def parse_args():
         help = "Encrypt layers with AES-GCM (NIST SP 800-38D) [default]"
     )
     cipher_group.add_argument(
-        "-chacha20", dest = "cipher", action = "store_const", const = "ChaCha20-Poly1305",
+        "-chacha20-poly1305", dest = "cipher", action = "store_const", const = "ChaCha20-Poly1305",
         help = "Encrypt layers with ChaCha20-Poly1305 (RFC 8439)"
     )
     cipher_group.add_argument(
