@@ -16,16 +16,16 @@ pip3 install -r requirements.txt
 ## Running demo (mac)
 ```bash
 (.venv) python3 demo.py --help
-(.venv) python3 demo.py path/to/image.jpg            # defaults to AES-GCM
+(.venv) python3 demo.py path/to/image.jpg                       # defaults to AES-GCM
 (.venv) python3 demo.py -aes-gcm path/to/image.jpg
-(.venv) python3 demo.py -chacha20 path/to/image.jpg
-# specify output directory
-(.venv) python3 demo.py -aes-gcm-siv path/to/image.jpg out_dir  
+(.venv) python3 demo.py -chacha20-poly1305 path/to/image.jpg
+(.venv) python3 demo.py -aes-gcm-siv path/to/image.jpg out_dir  # specify output directory
 ```
 
 ## Running benchmark (mac)
 ```bash
-(.venv) python bench.py                             # default sizes, 7 repeats x 50 calls each
-(.venv) python bench.py -n 100 -r 15                # specify number of calls, number of repeats
-(.venv) python bench.py --sizes 16384 65536         # custom input sizes (bytes)
+(.venv) python3 bench.py --help
+(.venv) python3 bench.py                            # default sizes, 25 repeats x 50 calls each
+(.venv) python3 bench.py -n 100 -r 15               # specify number of calls, number of repeats
+(.venv) python3 bench.py --sizes 16384 65536        # custom input sizes (bytes)
 ```
